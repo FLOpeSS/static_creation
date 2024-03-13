@@ -12,16 +12,8 @@ class TextNode():
 
   def __eq__(self, other):
     if isinstance(other, TextNode):
-      return other == self
-
+      return (self.text, self.text_type, self.url) == (other.text, other.text_type, other.url)
     return False
 
 
 
-class aluno():
-  def __init__(self, name):
-    self.name = name
-
-
-  def __repr__(self):
-    return f'this is the student: {self.name}'
