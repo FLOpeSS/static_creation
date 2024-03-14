@@ -21,3 +21,10 @@ class HTMLNode():
        props_html += f' {prop}="{self.props[prop]}"'
      return props_html
 
+
+
+class LeafNode(HTMLNode):
+  def __init__(self, tag=None, value=None, children=None, props=None):
+    super().__init__(tag, value, children, props)
+
+
