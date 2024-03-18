@@ -19,6 +19,12 @@ class TestLeafNode(unittest.TestCase):
     expected_return = '<p  href="https://www.google.com">hello world</p>'
     self.assertEqual(html_text, expected_return)
 
+  def test_to_html_no_props(self):
+    print("testing to html with no props")
+    leaf = LeafNode("p", "hello world", None, None) 
+    result = leaf.to_html()
+    expected_return = '<p>hello world</p>'
+    self.assertEqual(result, expected_return)
 
 
 if __name__ == '__main__':

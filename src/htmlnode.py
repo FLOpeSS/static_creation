@@ -46,9 +46,3 @@ class LeafNode(HTMLNode):
 
 
 
-leaf = LeafNode("a", "hello world", None, props={"href": "https://www.google.com"} )
-html = leaf.to_html()
-
-print(repr(leaf))
-print(html)
-
