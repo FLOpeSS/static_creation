@@ -28,6 +28,10 @@ class LeafNode(HTMLNode):
   def __init__(self, tag=None, value=None, children=None, props=None):
     super().__init__(tag, value, children, props)
 
+  def __repr__(self):
+    return f'Tag: {self.tag}, Value: {self.value}, Children: {self.children}, Props: {self.props}'
+
+
   def to_html(self)-> str:
     if self.value == None or self.value == "":
       raise ValueError
@@ -39,4 +43,12 @@ class LeafNode(HTMLNode):
       return f'<{self.tag} {self.props_to_html()}>{self.value}</{self.tag}>'
 
     return f'<{self.tag}>{self.value}</{self.tag}>'
+
+
+
+leaf = LeafNode("a", "hello world", None, props={"href": "https://www.google.com"} )
+html = leaf.to_html()
+
+print(repr(leaf))
+print(html)
 
